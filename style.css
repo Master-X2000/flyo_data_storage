@@ -1,0 +1,267 @@
+/* || FONT */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* || RESET */
+* {
+    margin:0;
+    padding:0;
+    box-sizing :border-box;
+}
+
+img,
+svg,
+canvas{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* || VARIABLES */
+:root{
+    --GRADIENT: linear-gradient(to right hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    --ACCENT-CLR-4: hsl(243, 100%, 93%);
+    --ACCENT-CLR-3: hsl(229, 7%, 55%);
+    --ACCENT-CLR-2: hsl(228, 56%, 26%);
+    --ACCENT-CLR-1: hsl(229, 57%, 11%);
+}
+
+/* || STYLES */
+body{
+    display:grid;
+    place-content:center;
+    gap:1rem;
+    min-height:100svh;
+    background-color:var(--ACCENT-CLR-1);
+    position:relative;
+    font-family:'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:12px;
+}
+
+body::after{
+    content:'';
+    width:100%;
+    height:100svh;
+    background-image: url(images/bg-mobile.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+
+.container{
+    display:grid;
+    place-content: center;
+    gap:1rem;
+    height:auto;
+    z-index:1;
+    margin:1.5rem;
+    position:relative;
+}
+
+.block{
+    background-color:var(--ACCENT-CLR-2);
+}
+
+.first{
+    display:grid;
+    gap:1.2rem;
+    padding:1.2rem;
+    border-radius:0.35rem 3rem 0.35rem 0.35rem;
+}
+
+.top{
+    width:35%;
+}
+
+.bottom{
+    display:flex;
+    gap:0.5rem;
+    width:60%;
+}
+
+.icon{
+    background:var(--ACCENT-CLR-1);
+    padding:0.5rem;
+    border-radius:0.5rem;
+    width:45%;
+}
+
+.second{
+    display:grid;
+    place-content:center;
+    gap:0.5rem;
+    padding:1rem;
+    font-size:12px;
+    color:var(--ACCENT-CLR-3);
+    font-weight: 400;
+    border-radius: 0.5rem;
+    position:relative;
+}
+
+.bold{
+    font-weight: 700;
+    color:var(--ACCENT-CLR-3)
+}
+
+.highlight{
+    display:flex;
+    gap:0.15rem;
+    justify-content:center;
+    align-items:center;
+
+    background-color:var(--ACCENT-CLR-4);
+    padding:0.5rem;
+    border-radius:0.4rem;
+    position:absolute;
+}
+
+.gb{
+    font-size: 10px;
+}
+
+.num{
+    color:var(--ACCENT-CLR-1);
+    font-weight:bolder;
+    font-size:1.3rem;
+}
+
+.rectangle_container{
+    width:18rem;
+    height:0.75rem;
+    background-color: var(--ACCENT-CLR-1);
+    padding:0.1rem;
+    border-radius:1000px;
+
+    display:flex;
+    align-items:center;
+    justify-content:start;
+}
+
+.coloured_rec{
+    width:81.5%;
+    height:0.5rem;
+    background-image: linear-gradient(
+        to right,
+        hsl(6, 100%, 80%),
+        hsl(335, 100%, 65%))
+    ; 
+    border-radius:1000px;
+    padding:0.1rem;
+
+    display:flex;
+    align-items:center;
+    justify-content: end;
+
+}
+
+.circle{
+    height:0.4rem;
+    width:0.4rem;
+    border-radius:50%;
+    background-color:var(--ACCENT-CLR-4);
+}
+
+.range{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    width:100%;
+}
+
+.tri{
+    display:none;
+}
+
+/* || MEDIA QUARIES */
+@media screen and (min-width: 550px){
+    body::after{
+        content:'';
+        width:100%;
+        height:50svh;
+        background-image: url(images/bg-desktop.png);
+    }
+
+    .container{
+        grid-template-columns: 35% 65%;
+        
+    }
+
+    .top_two{
+        display:flex;
+        gap:1rem;
+    }
+
+    .second{
+        height:80%;
+        align-self:flex-end;
+    }
+
+    .highlight{
+        top:-20%;
+        right:1rem;
+    }
+
+    .tri{
+        display:block;
+        height:20px;
+        width:20px;
+        position:absolute;
+        bottom:-32%;
+        right:0;
+    }
+}
+
+
+@media screen and (max-width: 550px){
+    .highlight{
+        bottom:-20%;
+        left:20%;
+        right:20%;
+    }
+}
+
+@media screen and (min-width: 300px){
+    .icon{
+        padding:0.75rem;
+        border-radius:0.5rem;
+        width:45%;
+    }
+    
+}
+
+@media screen and (max-width: 375px){
+    .rectangle_container{
+        width:16rem;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .rectangle_container{
+        width:14rem;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .rectangle_container{
+        width:12rem;
+    }
+}
+
+@media screen and (max-width: 275px){
+    .rectangle_container{
+        width:10rem;
+    }
+}
+
+/* || ATTRIBUTION */
+.attribution {
+font-size: 11px;
+text-align: center;
+}
+
+.attribution a {
+color: hsl(228, 45%, 44%);
+}
